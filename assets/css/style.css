@@ -1,0 +1,21 @@
+.title {
+    background: orange;
+    color: white;
+}
+
+.instructions {
+    background: bisque;
+    color: green;
+}
+
+.number {
+    background: green;
+    color: yellow;
+}
+
+
+.score, .total-score-title, .total-score {
+    background: lightseagreen;
+    color:white;
+}
+
