@@ -3,12 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+       
         <link rel="stylesheet" href="assets/css/style.css">
         <title>Crystal Collector</title>
     </head>
 
-    <body>
-
+    <body> 
+        <script type="text/javascript" src="assets/javascript/game.js"></script>
         <h1 class="title">Crystals Collector!</h1>
         <br>
         <div class="instructions">
@@ -26,101 +27,6 @@
         <div class="total-score-title"><p>Your total score is:</p>
         <div class="total-score"></div>
         </div>
-
-        <script>
-            var wins = 0;
-            var losses = 0;
-            var crystalNumbersArray = [];
-            var score = 0;
-            var randomNumber;
-
-
-            function randomNumberFunc() {
-                randomNumber = Math.floor(Math.random() * 100) + 1;
-                $(".number").html("<p>Random Number: <p>" + randomNumber);
-            };
-            randomNumberFunc();
-            
-
-            function crystalNumbersFunc() {
-                for (var i = 0; i < 4; i++) {
-                    var crystalNumber = Math.floor(Math.random() * 12) + 1;
-                    crystalNumbersArray.push(crystalNumber);
-                }
-                console.log(crystalNumbersArray);
-            };
-            crystalNumbersFunc();
-
-            function reset() {
-                randomNumberFunc();
-                crystalNumbersArray = [];
-                crystalNumbersFunc();
-                score = 0;
-            };
-
-            
-            
-
-            $(".crystals").html("<button><img src=assets/images/crystal1.jpg class=pictures id=button1></button>");
-            $(".crystals").append("<button><img src=assets/images/crystal2.jpg class=pictures id=button2></button>");
-            $(".crystals").append("<button><img src=assets/images/crystal3.jpg class=pictures id=button3></button>");
-            $(".crystals").append("<button><img src=assets/images/crystal4.jpg class=pictures id=button4></button>");
-            
-            $(".pictures").attr({height:100, width:100});
-            
-           
-
-            // Calculating your total score
-            $(".pictures").on("click", function() {
-                if (this.id  === "button1") {
-                    value = crystalNumbersArray[0];
-                    $(".total-score").text(score += value);
-                    
-                }
-                else if (this.id  === "button2") {
-                    value = crystalNumbersArray[1];
-                    $(".total-score").text(score += value);
-                    
-                }
-                else if (this.id  === "button3") {
-                    value = crystalNumbersArray[2];
-                    $(".total-score").text(score += value);
-                    
-                }
-                else if (this.id  === "button4") {
-                    value = crystalNumbersArray[3];
-                    $(".total-score").text(score += value);
-                    
-                };
-                
-                if (score === randomNumber) {
-                        wins++;
-                        $(".total-score").text(score=0);
-                        reset();
-
-                }
-                else if (score > randomNumber) {
-                        losses++;
-                        $(".total-score").text(score=0);
-                        reset();
-                }; 
-                
-                $(".score").html("<p>Score: " + "</p>" + "<p>Wins: " + wins + "<p>" + "<p>Losses: " + losses + "<p>");
-                
-            });
-            
-            
-            
-               
-           
-               
-
-
-
-
-
-        
-        </script>
 
     </body>
 </html>
