@@ -30,18 +30,35 @@
         <script>
             var wins = 0;
             var losses = 0;
-            var randomNumber = Math.floor(Math.random() * 100) + 1;
             var crystalNumbersArray = [];
             var score = 0;
-
-            for (var i = 0; i < 4; i++) {
-                var crystalNumber = Math.floor(Math.random() * 12) + 1;
-                crystalNumbersArray.push(crystalNumber);
-            }
-            console.log(crystalNumbersArray);
+            var randomNumber;
 
 
-            $(".number").html("<p>Random Number: <p>" +randomNumber);
+            function randomNumberFunc() {
+                randomNumber = Math.floor(Math.random() * 100) + 1;
+                $(".number").html("<p>Random Number: <p>" + randomNumber);
+            };
+            randomNumberFunc();
+            
+
+            function crystalNumbersFunc() {
+                for (var i = 0; i < 4; i++) {
+                    var crystalNumber = Math.floor(Math.random() * 12) + 1;
+                    crystalNumbersArray.push(crystalNumber);
+                }
+                console.log(crystalNumbersArray);
+            };
+            crystalNumbersFunc();
+
+            function reset() {
+                randomNumberFunc();
+                crystalNumbersArray = [];
+                crystalNumbersFunc();
+                score = 0;
+            };
+
+            
             
 
             $(".crystals").html("<button><img src=assets/images/crystal1.jpg class=pictures id=button1></button>");
@@ -52,6 +69,7 @@
             $(".pictures").attr({height:100, width:100});
             
            
+
             // Calculating your total score
             $(".pictures").on("click", function() {
                 if (this.id  === "button1") {
@@ -74,18 +92,28 @@
                     $(".total-score").text(score += value);
                     
                 };
-                console.log(score);
+                
                 if (score === randomNumber) {
                         wins++;
                         $(".total-score").text(score=0);
-                    }
+                        reset();
+
+                }
                 else if (score > randomNumber) {
                         losses++;
                         $(".total-score").text(score=0);
-                    };
+                        reset();
+                }; 
+                
                 $(".score").html("<p>Score: " + "</p>" + "<p>Wins: " + wins + "<p>" + "<p>Losses: " + losses + "<p>");
+                
             });
+            
+            
+            
+               
            
+               
 
 
 
