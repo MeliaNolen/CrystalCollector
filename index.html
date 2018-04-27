@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-       
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Crystal Collector</title>
-    </head>
 
-    <body> 
-        <script type="text/javascript" src="assets/javascript/game.js"></script>
-        <h1 class="title">Crystals Collector!</h1>
-        <br>
-        <div class="instructions">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Arapey" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Crystal Collector</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+    <div class="container">
+        <h1 class="row title">Crystal Collector!</h1>
+
+        <div class="row z-depth-5 instructions">
+            <h4>Instructions:</h4>
             <p>Click on a crystal to add a specific amount to your total score.</p>
             <p>The value of the crystal is hidden from you until you click on it and changes each new game.</p>
             <p>You win by matching your total score to the random number in the green box.</p>
             <p>Good luck!</p>
         </div>
-        <br>
-        <div class="number"></div>
-        <div class="score"></div>
-        <br>
-        <div class="crystals"></div>
-        <br>
-        <div class="total-score-title"><p>Your total score is:</p>
-        <div class="total-score"></div>
+
+        <div class="row scores-div">
+            <div class="col l3 s12 z-depth-5 number"></div>
+            <div class="col l3 s12 z-depth-5 total-score-title">
+                <p>Your total score is:</p>
+                <div class="total-score"></div>
+            </div>
+            <div class="col l3 s12 z-depth-5 score"></div>
         </div>
 
-    </body>
+        <div class="crystals"></div>
+
+    </div>
+</body>
+
 </html>

@@ -9,11 +9,10 @@ $(document).ready( function() {
     // Setting up pictures and scoreboard
     function startFunc() {
         $(".score").html("<p>Score: " + "</p>" + "<p>Wins: " + wins + "<p>" + "<p>Losses: " + losses + "<p>");
-        $(".crystals").html("<img src=assets/images/crystal1.jpg class=pictures id=button1 />");
-        $(".crystals").append("<img src=assets/images/crystal2.jpg class=pictures id=button2 />");
-        $(".crystals").append("<img src=assets/images/crystal3.jpg class=pictures id=button3 />");
-        $(".crystals").append("<img src=assets/images/crystal4.jpg class=pictures id=button4 />");
-        $(".pictures").attr({height:100, width:100});
+        for (var i =1; i<5; i++) {
+            $(".crystals").append("<img src=assets/images/crystal" + i + ".jpg class=pictures id=button" + i + " />");
+        }
+        $(".pictures").attr("style", "height:250px; width:250px; padding:10px;");
         $(".total-score").text(score);
     }; 
     startFunc();
@@ -68,17 +67,17 @@ $(document).ready( function() {
             
         };
         
-        // Calculating your total score and tracking wins/losses
+        // Calculating total score and tracking wins/losses
         if (score === randomNumber) {
-                wins++;
-                $(".total-score").text(score=0);
-                reset();
+            wins++;
+            $(".total-score").text(score=0);
+            reset();
 
         }
         else if (score > randomNumber) {
-                losses++;
-                $(".total-score").text(score=0);
-                reset();
+            losses++;
+            $(".total-score").text(score=0);
+            reset();
         }; 
         
         // Displaying wins and losses

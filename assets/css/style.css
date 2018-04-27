@@ -1,21 +1,48 @@
+body {
+    background: linear-gradient(
+        to top right, 
+        rgb(255, 0, 212), 
+        rgb(247, 141, 241), 
+        #a73cff, 
+        #4fbeff,
+        rgb(0, 255, 234),
+        rgb(90, 206, 109)) 
+    no-repeat center fixed;
+    background-size: cover;  
+    font-family: 'Neuton', serif;
+}
+
 .title {
-    background: orange;
-    color: white;
+    background: white;
+    text-align: center;
+    padding: 20px;
 }
 
 .instructions {
-    background: bisque;
-    color: green;
-}
-
-.number {
-    background: green;
-    color: yellow;
+    background: white;
+    padding: 20px;
+    font-size: 15pt;
 }
 
 
-.score, .total-score-title, .total-score {
-    background: lightseagreen;
-    color:white;
+
+
+.score, .total-score-title, .number {
+    background: white;
+    padding: 20px;
+    font-size: 20pt;
+    height: 200px;
+    width: 200px;
+    margin: 40px;
+}
+
+
+
+
+
+.crystals {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
